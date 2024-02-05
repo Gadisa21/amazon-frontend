@@ -44,3 +44,8 @@
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
 }
+@media(max-width:768px){
+    .payment__section{
+        flex-direction: column;
+    }
+}

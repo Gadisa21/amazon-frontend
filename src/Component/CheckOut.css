@@ -25,3 +25,9 @@
     background-color: white;
     height: max-content;
 }
+@media(max-width:768px){
+.checkout{
+    flex-direction: column;
+}
+
+}

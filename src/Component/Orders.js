@@ -12,8 +12,8 @@ function Orders() {
     if(user){
       db.collection("user").doc(user?.uid).collection("orders").orderBy("created","desc").onSnapshot((snapshot)=>
       setOrders(snapshot.docs.map((doc)=>({
-        id:doc.id,
-        data:doc.data()
+        id:doc?.id,
+        data:doc?.data()
       }))))
     }
     else{
@@ -22,15 +22,18 @@ function Orders() {
 
   },[user])
   return (
-    <div className='orders'>
-      <h1>Your Orders</h1>
-      <div className='orders__order'>
-        {orders?.map((order)=>(
-          <Order order={order}/>
+    <div className="orders">
+      <div className='abe'>
+        <h1>Your Orders</h1>
+      </div>
+
+      <div className="orders__order">
+        {orders?.map((order) => (
+          <Order order={order} />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default Orders

@@ -1,9 +1,12 @@
 *{
     margin: 0;
+    padding: 0;
 }
 .header{
     height: 60px;
     display: flex;
+   
+    width: 100%;
    
     align-items: center;
     background-color: #131921;
@@ -12,6 +15,10 @@
     z-index: 100;
 
 
+}
+.header_span{
+  display: flex;
+  flex: 1;
 }
 .header_logo{
     width: 100px;
@@ -31,7 +38,7 @@
     height: 11px;
     padding: 10px;
     border: none;
-    width: 100%;
+    width: 90%;
 }
 .header_searchIcon{
     padding: 5px;
@@ -41,6 +48,7 @@
 .header__nav{
     display: flex;
     justify-content: space-evenly;
+    
 }
 .header__option{
     display: flex;
@@ -65,9 +73,40 @@
  margin: 0 10px 0 10px;
 }
 .link{
-     text-decoration: none;
       color: white
 }
 .no_uderline{
     text-decoration: none;
 }
+.pointer{
+    cursor: pointer;
+
+}
+
+
+/* Add the following code at the end of the existing CSS file */
+
+/* Make the header responsive */
+@media (max-width: 768px) {
+
+.header__search{
+  margin-right: 20px;
+  
+
+}
+.header__searchInput{
+  width: 100%;
+  border-radius: 15px;
+  margin-right: -34px;
+ 
+}
+.header_searchIcon{
+  border-radius: 15px;
+}
+.header{
+  height: 100px;
+  display: block;
+}
+  
+}
+

@@ -22,6 +22,23 @@ function Payment() {
 
   const [ClientSecret, setClientSecret] = useState(true);
 
+  useEffect(() => {
+    const getClientSecret = async () => {
+      if (basket.length > 0) {
+        const response = await axios({
+          method: "post",
+          url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+        });
+        setClientSecret(response?.data.clientSecret);
+      }
+    };
+    getClientSecret();
+  }, [basket]);
+
+
+
+  console.log("THE SERCERT KEY IS", ClientSecret);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
@@ -35,11 +52,11 @@ function Payment() {
         db.collection("user")
           .doc(user?.uid)
           .collection("orders")
-          .doc(paymentIntent.id)
+          .doc(paymentIntent?.id)
           .set({
             basket: basket,
-            amount: paymentIntent.amount,
-            created: paymentIntent.created,
+            amount: paymentIntent?.amount,
+            created: paymentIntent?.created,
           });
 
         setSucceeded(true);
@@ -60,19 +77,9 @@ function Payment() {
   const getBasketTotal = (basket) =>
     basket?.reduce((amount, item) => amount + item.price, 0);
 
-  useEffect(() => {
-    const getClientSecret = async () => {
-      if(basket.length>0){
-      const response = await axios({
-        method: "post",
-        url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
-      });
-      setClientSecret(response.data.clientSecret);
-    }}
-    getClientSecret();
-  }, [basket]);
+  
 
-  // console.log("The secret number is", ClientSecret);
+
 
   return (
     <div className="payment">

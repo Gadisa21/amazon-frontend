@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Header from"./Component/Header.js"
 import Home from './Component/Home.js'
-import { BrowserRouter,Route,Routes } from 'react-router-dom'
+import { BrowserRouter,Route,Routes, useNavigate } from 'react-router-dom'
 import CheckOut from './Component/CheckOut.js'
 import "./App.css"
 import Login from './Component/Login.js'
@@ -15,9 +15,14 @@ const promise = loadStripe(
   "pk_test_51OPMDvFSE4NUJxA98vKTYYek8EuScg5FAAF2VgyMdNgMot5FypBB6fqawcgAIseBUpUhkYS6IeHstUMTG2jcuzWf00R7nvwqyu"
 );
 
+
 function App() {
-  const [{},dispatch]=useStateValue()
+  const [{ basket, user }, dispatch] = useStateValue();
   useEffect(()=>{
+ 
+
+  
+    
     auth.onAuthStateChanged((authUser)=>{
       if(authUser){
        dispatch({
