@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/amazon_frontend/static/css/main.1c2a3044.css",
+    "main.js": "/amazon_frontend/static/js/main.a32deab2.js",
+    "static/media/home.jpg": "/amazon_frontend/static/media/home.1842e730a40ac700066d.jpg",
+    "static/media/security.jpg": "/amazon_frontend/static/media/security.eaf8a697e506e1dab310.jpg",
+    "static/media/monitor.jpg": "/amazon_frontend/static/media/monitor.0486f64bdd898800ef08.jpg",
+    "static/media/pavilion.jpg": "/amazon_frontend/static/media/pavilion.84fe9daae2de2446b2f6.jpg",
+    "static/media/hplatest.jpg": "/amazon_frontend/static/media/hplatest.42f15513b711003c08cd.jpg",
+    "static/media/desktop.jpg": "/amazon_frontend/static/media/desktop.d4cbc89825a563722b40.jpg",
+    "static/media/geming.jpg": "/amazon_frontend/static/media/geming.75a31777e9a62d2de486.jpg",
+    "static/media/Checkout.svg": "/amazon_frontend/static/media/Checkout.7d3158e69144600ce397f0ef50471f00.svg",
+    "index.html": "/amazon_frontend/index.html",
+    "main.1c2a3044.css.map": "/amazon_frontend/static/css/main.1c2a3044.css.map",
+    "main.a32deab2.js.map": "/amazon_frontend/static/js/main.a32deab2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1c2a3044.css",
+    "static/js/main.a32deab2.js"
+  ]
+}
